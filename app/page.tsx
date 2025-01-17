@@ -4,7 +4,7 @@
 import { Accordion, AccordionSummary, AccordionDetails, Button, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const TrainContainer = styled.div`
   display: flex;
@@ -16,11 +16,6 @@ const TrainContainer = styled.div`
   justify-content: center;
 `;
 
-const Title = styled.h1`
-  font-size: 2.5rem;
-  color: #007bff;
-  margin-bottom: 2rem;
-`;
 
 const WagonSummary = styled.div`
   display: flex;
@@ -97,7 +92,7 @@ const ReservationApp = () => {
         return updatedSelectedRoomsList;
       });
     } catch (error) {
-      alert('Error reserving room');
+      alert('Error reserving room: '+ error.message);
     } finally {
       setLoading(false);
     }

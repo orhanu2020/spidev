@@ -7,7 +7,7 @@ type ReservationRequest = {
     message: string;
   };
   
-  let wagons: boolean[][] = Array.from({ length: 30 }, () => Array(20).fill(false)); // Each wagon has 20 rooms, initially unreserved
+  const wagons: boolean[][] = Array.from({ length: 30 }, () => Array(20).fill(false)); // Each wagon has 20 rooms, initially unreserved
   
   export default function handler(req: { method: string; body: ReservationRequest }, res: { status: (arg0: number) => { (): any; new (): any; json: { (arg0: ResponseData): void; (arg0: { message: string }): void; }; }; }) {
     const { method } = req;
