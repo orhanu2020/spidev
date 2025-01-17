@@ -91,8 +91,8 @@ const ReservationApp = () => {
         );
         return updatedSelectedRoomsList;
       });
-    } catch (error) {
-      alert('Error reserving room: '+ error.message);
+    } catch {
+      alert('Error reserving room');
     } finally {
       setLoading(false);
     }
